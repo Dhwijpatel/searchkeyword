@@ -1,0 +1,21 @@
+<!doctype html>
+<head>
+</head>
+<body><input type="text" id="search">
+<button onclick="search()">Check</button>
+<p id="text">India is the land of people of diverse religions, traditions and castes. People of India represent the essence of our country. The diverse colours of India are its cultures, traditions and religions. It is the land of rich vegetation and wildlife. Art and entertainment is the life of India.</p>
+<img src="">
+<script>
+  function search() {
+	let x = document.getElementById("search").value.trim();
+  if (x !== "") {
+  	let y = document.getElementById("text").innerHTML;
+  	let re = new RegExp(x,"g"); 
+		let newText = y.replace(re, `<mark>${x}</mark>`);
+		document.getElementById("text").innerHTML = newText;
+  }
+}
+</script>
+</body>
+</html>
+
